@@ -13,7 +13,18 @@
 
 		<h2> Exercise 1 - Setting up webpack and Babel </h2>
 
-		<h3> Step 1 - Setting up an empty webpack </h3>
+		<h3> Step 1 - Create a new empty folder for the project </h3>
+
+<pre><code>mkdir react-exercises
+cd react-exercises
+git init
+</code></pre>
+
+		<p> Go to <a href="http://gitignore.io">http://gitignore.io</a> and create a gitignore file </p>
+
+		<p> After creating a gitignore file commit the files to your new project </p>
+
+		<h3> Step 2 - Setting up an empty webpack build </h3>
 
 		<p>
 			Webpack is used for bundeling all your source files into a single javascript bundle.
@@ -25,20 +36,69 @@
 			So start of by creating an empty folder and then a file called <mark> index.js </mark>.
 		</p>
 
-		<pre><code>npm i --save-dev webpack webpack-cli</code></pre>
+<pre><code>mkdir src
+touch src/index.js
+cat "console.log('test')" &gt; src/index.js
+npm i --save-dev webpack webpack-cli
+webpack
+</code></pre>
 
-		<h3> Step 2 - html-webpack-plugin </h3>
-		
-		<a href="https://github.com/jantimon/html-webpack-plugin"> html-webpack-plugin </a>
+		<p> Webpack should automatically have created a folder called "dist" with the output </p>
+
+		<h3> Step 3 - <a href="https://github.com/jantimon/html-webpack-plugin"> html-webpack-plugin </a></h3>
+
+		<p> html-webpack-plugin can automatically gennerate a html file for you </p>
 
 		<pre><code>npm i --save-dev html-webpack-plugin</code></pre>
 
-		<h3> Step 3 - Setting up babel</h3>
+		<p> Then lets create a config file for webpack called "webpack.config.js" and add the plugin. </p>
+
+<pre><code>const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin()
+  ]
+}
+</code></pre>
+
+		<p> When you rebuild the project next time you should get two files out. One JS file and one automatically gennerated HTML file. Try opening up the html file in your browser and see how it looks. </p>
+
+		<h3> Step 4 - Setting up babel</h3>
 
 		<p> Instructions taken from <a href="https://babeljs.io/">https://babeljs.io/</a>. Always use the webpage for updated documentation </p>
 
+		<p> Start of by installing babel core and the loader for webpack: </p>
+
 		<pre><code>npm i --save-dev babel-loader @babel/core</code></pre> 
 
+		<p> Then let's update the webpack config: </p>
+
+<pre><code>const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin()
+  ]
+}
+</code></pre>
+
+		<p> Webpack will now call babel on all files ending with ".js" or ".jsx". But we haven't configured babel to do anything yet. To do so let's install two presets. </p>
+
+<pre><code>npm i --save-dev @babel/preset-env @babel/preset-react</code></pre>
+
+		<p> And then we need to create a file called ".babelrc" to tell babel what presets we installed. </p>
+
+
+<pre><code>{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+</code></pre>
 
 		<h2> Exercises 2 - Setting up React </h2>
 	

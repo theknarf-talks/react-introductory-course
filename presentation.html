@@ -31,6 +31,7 @@
 					</section>
 					<section>
 						<p> You might want to open this presentation on your computer </p>
+						<p> The presentations URL: </p>
 						<pre class="location"></pre>
 					</section>
 					<section>
@@ -38,8 +39,23 @@
 						<ul>
 							<li> Your own computer </li>
 							<li> A text editor or IDE </li>
-							<li> Node.js and npm </li>
+							<li> Knows how to use the terminal </li>
+							<li> <a href="https://nodejs.org/en/download/">Node.js and npm</a> </li>
 						</ul>
+					</section>
+					<section>
+						<h3> Tip for working with Node.js </h3>
+						<p> Setup the following in your path: </p>
+						<pre><code>export PATH=$PATH:./node_modules/.bin</code></pre>
+					</section>
+					<section>
+						<h3> Tip for working with Node.js </h3>
+						<p> If you don't want to mess with enviroment variables you can install <a href="https://github.com/zkat/npx">npx</a> </b>
+						<pre><code>npm i -g npx</code></pre>
+						<p> But for MacOS and Linux users I reccomend the first solution </p>
+					</section>
+					<section>
+						<p> The presentations URL: </p>
 						<pre class="location"></pre>
 					</section>
 				</section>
@@ -61,14 +77,19 @@
 				<section>
 					<section>
 						<h2> What is React? </h2>
+						<p class="fragment">React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.</p>
 					</section>
 					<section>
 						<h2> History of React </h2>
+
+						<p class="fragment"> First released on March 2013, 5 years ago. </p>
+						<p class="fragment"> Angular (2010), Vue (2014) </p>
+						<p class="fragment"> React native: summer of 2013 </p>
 					</section>
 					<section data-gif="repeat">
 						<h2> Create React App </h2>
-						<p> Create react app is a quick way of making a new react app </p>
-						<a href="https://github.com/facebook/create-react-app"> Source code </a>
+						<p>
+						<a href="https://github.com/facebook/create-react-app"> Create react app</a> is a quick way of making a new react app </p>
 						<img src="https://camo.githubusercontent.com/29765c4a32f03bd01d44edef1cd674225e3c906b/68747470733a2f2f63646e2e7261776769742e636f6d2f66616365626f6f6b2f6372656174652d72656163742d6170702f323762343261632f73637265656e636173742e737667" />
 					</section>
 				</section>
@@ -114,9 +135,70 @@ export default Header;
 					<section>
 						<h2> Webpack </h2>
 						<a href="https://webpack.js.org"> https://webpack.js.org </a>
-						<p> Bundeling it all together </p>   
+						<p> Bundeling it all together </p> 
+					</section>
+					<section>
+						<h2> Webpack </h2>
+						<img src="webpack.png" />						
+					</section>
+					<section>
+						<h2> Setting up Webpack </h2>
+						<p> Installing: </p>
+						<pre><code> npm i --save-dev webpack webpack-cli </code></pre>
+
+						<p> Usage: </p>
+						<pre><code>webpack --mode development</code></pre>
+
+						<p> Webpack assumes that the file <mark>./src/index.js</mark> exists. </p> 
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h2> Making react apps </h2>
+
+						<p> Two types of React components </p>
+						<ul>
+							<li> Stateless components </li>
+							<li> Components with state </li>
+						</ul>
+					</section>
+					<section>
+						<h2> Stateless components </h2>
+<pre><code>const StatelessComponent = ({ children }) =&gt;
+   &lt;div&gt;
+      &lt;p&gt; This is a stateless component &lt;/p&gt;
+      &lt;div&gt;{ children }&lt;/div&gt;
+   &lt;/div&gt;;
+
+const AndAnother = () =&gt;
+   &lt;div&gt;
+      &lt;StatelessComponent&gt; Yo! &lt;/StatelessComponent&gt;
+   &lt;/div&gt;;
+
+ReactDOM.render(document.body, &lt;AndAnother /&gt;); 
+</code></pre>
+					</section>
+					<section>
+						<h2> Components with state </h2>
+<pre><code>class ShoppingList extends React.Component {
+  render() {
+    return (
+      &lt;div className="shopping-list"&gt;
+        &lt;h1&gt;Shopping List for {this.props.name}&lt;/h1&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Instagram&lt;/li&gt;
+          &lt;li&gt;WhatsApp&lt;/li&gt;
+          &lt;li&gt;Oculus&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+					</section>
+				</section>
+
 
 				<section>
 					<section>
@@ -143,7 +225,23 @@ export default Header;
 					</section>
 					<section>
 						<h2> (3) Redux </h2>
+					</section>
 				</section>
+
+				<section>
+					<section>
+						<h2> React libraries </h2>
+						<p> Some libraries you might use with React </p>
+					</section>
+					<section>
+						<h2> React libraries </h2>
+						<ul>
+							<li><a href="https://github.com/i18next/react-i18next">i18next</a></li>
+							<li><a href="https://reacttraining.com/react-router/core">React router</a></li>
+						</ul>
+					</section>
+				</section>
+
 
 			</div>
 		</div>
