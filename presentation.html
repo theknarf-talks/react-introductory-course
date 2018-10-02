@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		
+		<title> React </title>
+
+		<link rel="stylesheet" href="reveal.css" />
+		<link rel="stylesheet" href="black.css" />
+		<link rel="stylesheet" href="zenburn.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<section>
+					<h1> React </h1>
+					<h2> introductory course </h2>
+					<p> By Frank Lyder Bredland </p>
+					</section>
+					<section>
+						<p>A talk about React</p>
+						<p class="fragment">and the tools around it</p>
+						<ul class="fragment">
+							<li> Babel </li>
+							<li class="fragment"> Webpack </li>
+							<li class="fragment"> Redux </li>
+							<li class="fragment"> And more... </li>
+						</ul>
+					</section>
+					<section>
+						<p> You might want to open this presentation on your computer </p>
+						<pre class="location"></pre>
+					</section>
+					<section>
+						<h2> Prerequisites </h2>
+						<ul>
+							<li> Your own computer </li>
+							<li> A text editor or IDE </li>
+							<li> Node.js and npm </li>
+						</ul>
+						<pre class="location"></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> Overview </h2>
+						<ul>
+							<li> Short introduction </li>
+							<li> What is React? </li>
+							<li> JSX &amp; Babel </li>
+							<li> Webpack </li>
+							<li> Exercises </li>
+							<li> Even more slides... </li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> What is React? </h2>
+					</section>
+					<section>
+						<h2> History of React </h2>
+					</section>
+					<section data-gif="repeat">
+						<h2> Create React App </h2>
+						<p> Create react app is a quick way of making a new react app </p>
+						<a href="https://github.com/facebook/create-react-app"> Source code </a>
+						<img src="https://camo.githubusercontent.com/29765c4a32f03bd01d44edef1cd674225e3c906b/68747470733a2f2f63646e2e7261776769742e636f6d2f66616365626f6f6b2f6372656174652d72656163742d6170702f323762343261632f73637265656e636173742e737667" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> JSX &amp; Babel </h2>
+					</section>
+					<section>
+						<h2> JSX </h2>
+						<p> One ingredient of the magic sauce of React </p>   
+<pre class="fragment"><code>import React from 'react';
+import { Link } from 'react-router-dom'
+import logo from 'logo.png';
+ 
+const Header = () =&gt;
+   &lt;header&gt;
+      &lt;Link to="/"&gt;
+         &lt;img className="logo" src={logo} /&gt;
+      &lt;/Link&gt;
+      &lt;select&gt;
+         &lt;option value="english"&gt;English&lt;/option&gt;
+         &lt;option value="norwegian"&gt;Norsk (Bokmål)&lt;/option&gt;
+      &lt;/select&gt;
+   &lt;/header&gt;;
+
+export default Header;
+</code></pre>
+					</section>
+					<section>
+						<h2> Babel </h2>
+						<a href="https://babeljs.io"> https://babeljs.io </a>
+						<p> Transpiling modern JavaScript and JSX into plain code. </p>   
+					</section>
+					<section>
+						<h2> Isomorphic-jsx </h2>
+						<a href="https://github.com/TheKnarf/isomorphic-jsx"> Source code </a>
+						<p> A JSX-powered templating library for building multi page websites. </p>   
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> Webpack </h2>
+						<a href="https://webpack.js.org"> https://webpack.js.org </a>
+						<p> Bundeling it all together </p>   
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> Exercises </h2>
+						<a href="/exercises.html"> Exercises </a>
+						<pre class="location"></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2> Redux </h2>
+						<a href="https://redux.js.org"> https://redux.js.org </a>
+					</section>
+					<section>
+						<p> Two ways to share state in React </p>
+						<p class="fragment"> ... and a third way </p>
+					</section>
+					<section>
+						<h2> (1) Props </h2>
+					</section>
+					<section>
+						<h2> (2) Callbacks </h2>
+					</section>
+					<section>
+						<h2> (3) Redux </h2>
+				</section>
+
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
