@@ -1,11 +1,65 @@
-
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8" />
+		
+		<title> React </title>
 		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="zenburn.css" />
 	</head>
 	<body>
 		<a href="/"> Back </a>
 		<h1> Exercises </h1>
 
+		<h2> Exercise 1 - Setting up webpack and Babel </h2>
+
+		<h3> Step 1 - Setting up an empty webpack </h3>
+
+		<p>
+			Webpack is used for bundeling all your source files into a single javascript bundle.
+			That way you wont have to include each one of them manually in the HTML file.
+		</p>
+
+		<p>
+			By default webpack tries to parse the file <mark> ./src/index.js </mark>.
+			So start of by creating an empty folder and then a file called <mark> index.js </mark>.
+		</p>
+
+		<pre><code>npm i --save-dev webpack webpack-cli</code></pre>
+
+		<h3> Step 2 - html-webpack-plugin </h3>
+		
+		<a href="https://github.com/jantimon/html-webpack-plugin"> html-webpack-plugin </a>
+
+		<pre><code>npm i --save-dev html-webpack-plugin</code></pre>
+
+		<h3> Step 3 - Setting up babel</h3>
+
+		<p> Instructions taken from <a href="https://babeljs.io/">https://babeljs.io/</a>. Always use the webpage for updated documentation </p>
+
+		<pre><code>npm i --save-dev babel-loader @babel/core</code></pre> 
+
+
+		<h2> Exercises 2 - Setting up React </h2>
+	
+<pre><code>import React from 'react';
+import { Link } from 'react-router-dom'
+import logo from 'logo.png';
+ 
+const Header = () =&gt;
+   &lt;header&gt;
+      &lt;Link to="/"&gt;
+         &lt;img className="logo" src={logo} /&gt;
+      &lt;/Link&gt;
+      &lt;select&gt;
+         &lt;option value="english"&gt;English&lt;/option&gt;
+         &lt;option value="norwegian"&gt;Norsk (Bokmål)&lt;/option&gt;
+      &lt;/select&gt;
+   &lt;/header&gt;;
+
+export default Header;
+</code></pre>
+
+		<script src="exercises.js"></script>	
 	</body>
 </html>
