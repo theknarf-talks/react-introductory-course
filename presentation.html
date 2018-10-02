@@ -125,6 +125,28 @@ export default Header;
 						<p> Transpiling modern JavaScript and JSX into plain code. </p>   
 					</section>
 					<section>
+						<p> Babel gets configured with plugins to compile code </p>
+						<p> For React we want two presets: </p>
+						<pre><code>npm i --save-dev @babel/preset-env @babel/preset-react</code></pre>
+					</section>
+					<section>
+						<p> Then we can configure babel by making a ".babelrc" file: </p>
+<pre><code>{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+</code></pre>
+					</section>
+					<section>
+						<h2> Babel </h2>
+						<img src="bable.png" />
+					</section>
+					<section>
+						<h2> Babel </h2>
+						<pre><code>&lt;div&gt; test &lt;/div&gt;</code></pre>
+						<p> is turned into </p>
+						<pre><code>React.createElement("div", null, "test");</code></pre>
+					</section>
+					<section>
 						<h2> Isomorphic-jsx </h2>
 						<a href="https://github.com/TheKnarf/isomorphic-jsx"> Source code </a>
 						<p> A JSX-powered templating library for building multi page websites. </p>   
@@ -150,6 +172,31 @@ export default Header;
 						<pre><code>webpack --mode development</code></pre>
 
 						<p> Webpack assumes that the file <mark>./src/index.js</mark> exists. </p> 
+					</section>
+					<section>
+						<p> Webpack can be configured to handle all kinds of files </p>
+						<ul>
+							<li class="fragment"> HTML </li>
+							<li class="fragment"> CSS and/or SASS </li>
+							<li class="fragment"> Image files </li>
+							<li class="fragment"> Font files </li>
+							<li class="fragment"> And any other files you configure... </li>
+						</ul>
+					</section>
+					<section>
+						<p> How does webpack handle all these kind of files? </p>
+						<p class="fragment"> Loaders! </p>
+					</section>
+					<section>
+						<p> A loader is simply a function that takes some code inn and returns a processed version </p>
+<pre class="fragment"><code>module.exports = source =&gt; {
+   return source
+      .replace(/\&LT;code\&gt;(([\n]|.)+?)\&LT;\/code\&gt;/gi,
+         (matches, g1) =&gt; {
+   const code = g1.replace(/&lt;/g, '&lt;').replace(/&gt;/g, '&gt;');
+   return `&LT;code&gt;${code}&LT;/code&gt;`;
+});
+</code></pre>	
 					</section>
 				</section>
 
