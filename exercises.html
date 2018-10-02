@@ -78,7 +78,7 @@ module.exports = {
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
   },
@@ -108,10 +108,21 @@ module.exports = {
 
 		<p> Let's create an React app! </p>
 		<p> <a href="https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment"> React tutorial </a>/p>
-	
-<pre><code>
 
+<pre><code>const StatelessComponent = ({ children }) =&gt;
+   &lt;div&gt;
+      &lt;p&gt; This is a stateless component &lt;/p&gt;
+      &lt;div&gt;{ children }&lt;/div&gt;
+   &lt;/div&gt;;
+
+const AndAnother = () =&gt;
+   &lt;div&gt;
+      &lt;StatelessComponent&gt; Yo! &lt;/StatelessComponent&gt;
+   &lt;/div&gt;;
+
+ReactDOM.render(document.body, &lt;AndAnother /&gt;); 
 </code></pre>
+	
 
 		<script src="exercises.js"></script>	
 	</body>
