@@ -20,7 +20,7 @@ cd react-exercises
 git init
 </code></pre>
 
-		<p> Go to <a href="http://gitignore.io">http://gitignore.io</a> and create a gitignore file </p>
+		<p> Go to <a href="http://gitignore.io">http://gitignore.io</a> and create a gitignore file. You need to add "node". </p>
 
 		<p> After creating a gitignore file commit the files to your new project </p>
 
@@ -38,7 +38,7 @@ git init
 
 <pre><code>mkdir src
 touch src/index.js
-cat "console.log('test')" &gt; src/index.js
+echo "console.log('test')" &gt; src/index.js
 npm i --save-dev webpack webpack-cli
 webpack
 </code></pre>
@@ -99,6 +99,10 @@ module.exports = {
   "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
 </code></pre>
+
+		<h4> Optionally setup TypeScript </h4>
+
+		<a href="https://babeljs.io/docs/en/babel-preset-typescript"> TypeScript for </a>
 
 		<h2> Exercises 2 - Setting up React </h2>
 
